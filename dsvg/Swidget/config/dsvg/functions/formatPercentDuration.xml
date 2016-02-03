@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-formatPercentDuration" version="1.0.0000.001">
+
+    <name>formatPercentDuration</name>
+    <description>Compute percent ellapsed time against a time period and now</description>
+    <content src="content/dsvg/functions/formatPercentDuration.js" type="text/javascript"/>
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">FLOAT</returnType>
+    <params>
+        <param name="startDate" required="true">
+            <type isRepeating="false">DATETIME</type>
+        </param>
+        <param name="endDate" required="true">
+            <type isRepeating="false">DATETIME</type>
+        </param>
+    </params>
+</function>

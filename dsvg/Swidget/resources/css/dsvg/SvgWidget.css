@@ -1,0 +1,17 @@
+.xcpselectable {
+   cursor : pointer ;
+}
+
+.xcpselectable:hover,
+.xcpselectable:focus {
+    /*fill:#ff0000 !important;*/
+	stroke-width : 20 !important;
+	stroke:#ff0000 !important;
+}
+
+
+.xcpselected {
+    /*fill:#ffff00 !important;*/
+	stroke-width : 20 !important;
+	stroke:#ff0000 !important;
+}

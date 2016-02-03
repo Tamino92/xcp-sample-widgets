@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://documentum.emc.com/2010/UI-Model"
+        xmlns:pe="http://documentum.emc.com/2010/Editors"
+        id="xgrid" xtype="xgrid" version="2.0.0000.001">
+
+    <name>xGRID</name>
+    <description>xGRid</description>
+
+
+    <icon src="icons/grid_16_wig.png" width="16" height="16"/> <!-- palette -->
+    <icon src="icons/grid_24_wig.png" width="24" height="24"/> <!-- drag-and-drop -->
+
+    <content src="content/dsvg/widgets/grid/xgrid.js" type="text/javascript"/>
+    <content src="content/dsvg/widgets/grid/xgridContentGenerator.js" type="text/javascript"/>
+    <content src="content/dsvg/lib/d3.min.js" type="text/javascript"/>
+    <content src="content/dsvg/widgets/grid/designer/xgrid.js" type="text/javascript" mode="design"/>
+
+    <content src="resources/css/dsvg/xgrid.css" type="text/css"/>
+
+    <category>xcpPalette:Custom</category>
+
+    <configuration>       
+        <propertyInfo name="store" hidden="true">
+            <type>STRING</type>
+        </propertyInfo>
+
+        <propertyInfo name="hidden">
+            <label>Hidden when</label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setHidden</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+
+        <propertyInfo name="valueField"  required="true">
+            <label>Value Field</label>
+            <type>STRING</type>
+        </propertyInfo>
+
+        <propertyInfo name="displayField" hidden="true">
+            <label>Display Field</label>
+            <type>STRING</type>
+        </propertyInfo>
+
+        <propertyInfo name="cls">
+            <label>CSS class</label>
+            <type>STRING</type>
+            <defaultvalue/>
+        </propertyInfo>
+
+        <propertyInfo name="height">
+            <label>Panel height</label>
+            <type>INTEGER</type>
+            <defaultvalue>50</defaultvalue>
+        </propertyInfo>
+    </configuration>
+
+    <expressionProperties>
+        <propertyInfo name="lastClickedItemId">
+            <label>Last Clicked Item</label>
+            <getterFun>
+                <name>dsvg.grid.widgets.xgrid.getLastClickedItemId</name>
+                <arguments>
+                    <argument>EVALUATION_CONTEXT</argument>
+                    <argument>WIDGET_ID</argument>
+                </arguments>
+            </getterFun>
+            <changeEvents>
+                <eventInfo name="itemclick"/>
+            </changeEvents>
+        </propertyInfo>
+    </expressionProperties>
+
+    <propertySheetConfiguration>
+        <pe:propertySheetTab name="General" id="general">
+            <pe:composite>
+                <pe:layout>
+                    <pe:gridLayout columns="2" />
+                </pe:layout>
+                <pe:section title="Basics">
+                    <pe:layout>
+                        <pe:gridLayout columns="2" />
+                    </pe:layout>
+                    <pe:xcpId id="xcp_id" label="Id"/>
+                </pe:section>
+                <pe:section title="Date">	
+                    <pe:layout>
+                        <pe:gridLayout columns="2"/>
+                    </pe:layout>					
+                    <pe:dropDown property="store" id="dsi" label="Data service">
+                        <pe:source>
+                            <pe:modelInfo>
+                                <pe:providerId>DATA_SOURCE_INSTANCES</pe:providerId>
+                            </pe:modelInfo>
+                        </pe:source>
+                        <pe:mapping>
+                            <pe:label>MODEL.label</pe:label>
+                            <pe:value>MODEL.name</pe:value>
+                        </pe:mapping>
+                    </pe:dropDown>
+                </pe:section>
+            </pe:composite>
+        </pe:propertySheetTab>
+
+        <pe:propertySheetTab name="Style" id="Style">
+            <pe:composite>
+                <pe:layout>
+                    <pe:gridLayout columns="2"/>
+                </pe:layout>
+                <pe:section title="Layout">
+                    <pe:layout>
+                        <pe:gridLayout columns="1"/>
+                    </pe:layout>
+                    <pe:sizePropertyEditor label="Height" property="height" reCreateWidgetOnChange="true">
+                    </pe:sizePropertyEditor>
+                </pe:section>
+                <pe:section title="${tab.style.section.format}">
+                    <pe:layout>
+                        <pe:gridLayout columns="2"/>
+                    </pe:layout>
+                    <pe:textField property="cls" label="Style"/>
+                </pe:section>
+            </pe:composite>
+        </pe:propertySheetTab>
+
+        <pe:propertySheetTab name="Behavior" id="behavior">
+            <pe:composite>
+                <pe:layout>
+                    <pe:gridLayout columns="2"/>
+                </pe:layout>
+                <pe:uiEventPublishEditor id="publishEvents"/>
+                <pe:composite/>
+                <pe:uiEventSubscribeEditor id="subscribeEvents"/>
+                <pe:composite/>
+            </pe:composite>
+        </pe:propertySheetTab>
+
+
+    </propertySheetConfiguration>
+
+
+    <events>
+        <eventInfo name="itemclick"/>
+        <eventInfo name="focus"/>
+        <eventInfo name="show"/>
+        <eventInfo name="hide"/>
+    </events>
+</widget>

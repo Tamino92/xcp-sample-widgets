@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://documentum.emc.com/2010/UI-Model" id="x_button" xtype="x_button" version="1.0.0000.001">
+
+    <name>Extended Button</name>
+    <description>Extended button</description>
+    <dependencies>
+        <dependency componentId="xcp_button" />
+    </dependencies>
+
+	<icon src="icons/fullwidthbutton_wig.png" width="16" height="16"/> <!-- palette -->
+    <icon src="icons/fullwidthbutton_24_wig.png" width="24" height="24"/> <!-- drag-and-drop -->
+
+    <content src="content/dsvg/widgets/xButton.js" type="text/javascript"/>
+    <content src="content/dsvg/widgets/designer/xButton.js" type="text/javascript" mode="design"/>
+
+    <category>xcpPalette:Action</category>
+
+    <configuration>
+        <propertyInfo name="text" localizable="true">
+            <label>Label</label>
+            <type>STRING</type>
+			<defaultvalue>Button</defaultvalue>
+			<constraint>
+	            <validator type="maxLength" maxLength="60"/>
+            </constraint>
+        </propertyInfo>
+        <propertyInfo name="action">
+            <label>Invoke</label>
+            <type>OBJECT</type>
+        </propertyInfo>
+        <propertyInfo name="actionInstanceId">
+            <label>Action instance</label>
+            <type>STRING</type>
+        </propertyInfo>
+		<propertyInfo name="cls">
+			<label>CSS Class</label>
+			<type>STRING</type>
+		</propertyInfo>
+		<propertyInfo name="disabled">
+            <label>Disabled when</label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setDisabled</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+        <propertyInfo name="hidden">
+            <label>Hidden when</label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setHidden</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+        <propertyInfo name="redirectPageUrlName">
+            <label></label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setRedirectPageUrlName</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>DATASOURCE_OUTPUT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+        <propertyInfo name="redirectObjectId">
+            <label></label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setRedirectObjectId</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>DATASOURCE_OUTPUT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+    </configuration>
+    <events>
+        <eventInfo name="click"/>
+        <eventInfo name="focus"/>
+        <eventInfo name="blur"/>
+        <eventInfo name="hide"/>
+        <eventInfo name="show"/>
+        <eventInfo name="disable"/>
+        <eventInfo name="enable"/>
+    </events>
+
+</widget>

@@ -1,0 +1,24 @@
+.dsvg-bg20 {
+	background-color : #DFFFA5 ;
+	z-index : -1 ;
+}
+
+.dsvg-bg40 {
+	background-color : #D1EC40 ;
+	z-index : -1 ;
+}
+
+.dsvg-bg60 {
+	background-color : #FEFE00 ;
+	z-index : -1 ;
+}
+
+.dsvg-bg80 {
+	background-color : #FF9912;
+	z-index : -1 ;
+}
+
+.dsvg-bg100 {
+	background-color : #FF4500 ;
+	z-index : -1 ;
+}

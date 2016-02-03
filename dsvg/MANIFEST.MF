@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.4
+Created-By: 1.6.0_45-b06 (Sun Microsystems Inc.)
+Built-By: galled2
+Component-Bundle: Swidget
+Bundle-Version: 1.0.0
+Bundle-ManifestVersion: 1
+Bundle-Name: SWidget
+Bundle-SymbolicName: SWidget
+NAMESPACE: dsvg
+EMC-XCP-ExecutionEnvironment: com.emc.executionenvironment.xcp:2.2.0
+
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-gatherXGalleryValues" version="1.0.0000.001">
+
+    <name>gatherXGalleryValues</name>
+    <description>gather gallery values</description>
+    <content src="content/dsvg/functions/gatherXGalleryValues.js" type="text/javascript"/>
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">STRING</returnType>
+    <params>
+        <param name="imagesURLs" required="true">
+            <type isRepeating="true">STRING</type>
+        </param>
+        <param name="thumbnailsURLs" required="true">
+            <type isRepeating="true">STRING</type>
+        </param>
+        <param name="imagesTitle" required="false">
+            <type isRepeating="true">STRING</type>
+        </param>
+        <param name="imagesCaptions" required="false">
+            <type isRepeating="true">STRING</type>
+        </param>
+    </params>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-gatherSVGContent" version="1.0.0000.001">
+
+    <name>gatherSVGContent</name>
+    <description>gather svg content for SvgWidget</description>
+    <content src="content/dsvg/functions/gatherSVGContent.js" type="text/javascript"/>
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">STRING</returnType>
+    <params>
+        <param name="svg" required="true">
+            <type isRepeating="false">STRING</type>
+        </param>
+    </params>
+</function>

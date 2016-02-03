@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://documentum.emc.com/2010/UI-Model" id="simple_time_line" xtype="simple_time_line" version="1.0.0000.001">
+
+    <name>Simple Time line</name>
+    <description>Simple time line</description>
+    <author email="dominique.gallet@emc.com">Dominique Gallet</author>
+
+
+    <icon src="icons/tl_16_wig.png" width="16" height="16"/> <!-- palette -->
+    <icon src="icons/tl_24_wig.png" width="24" height="24"/> <!-- drag-and-drop -->
+
+
+    <content src="content/dsvg/widgets/SimpleTimeLine.js" type="text/javascript"/>
+    <content src="content/dsvg/widgets/designer/SimpleTimeLine.js" type="text/javascript" mode="design"/>
+    <content src="content/dsvg/lib/moment-with-locales.js" type="text/javascript"/>
+    <content src="resources/css/dsvg/SimpleTimeLine.css" type="text/css"/>
+    moment-with-locales.js
+
+
+    <category>xcpPalette:Custom</category>
+
+    <configuration>
+        <databound name="value" eventBased="true">
+            <label>Initial Value</label>
+            <actionLabelForEvent>SetValue</actionLabelForEvent>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setValue</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>DATASOURCE_OUTPUT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <evaluateInitialOnly>true</evaluateInitialOnly>
+            </expression>
+        </databound>
+        <propertyInfo name="hidden">
+            <label>Hidden when</label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setHidden</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+        <propertyInfo name="title">
+            <label>Title</label>
+            <type>STRING</type>
+        </propertyInfo>
+        <propertyInfo name="debug">
+            <label>Debug</label>
+            <type>BOOLEAN</type>
+            <defaultvalue>true</defaultvalue>
+        </propertyInfo>
+    </configuration>
+
+    <events>
+        <eventInfo name="focus"/>
+        <eventInfo name="show"/>
+        <eventInfo name="hide"/>
+    </events>
+
+
+
+</widget>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-gatherTiledListResults" version="1.0.0000.001">
+
+    <name>gatherTiledListResults</name>
+    <description>gather Tiled list results</description>
+    <content src="content/dsvg/functions/gatherTiledListResults.js" type="text/javascript"/>
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">STRING</returnType>
+    <params>
+        <param name="mainTitles" required="true">
+            <type isRepeating="true">STRING</type>
+        </param>
+    </params>
+</function>

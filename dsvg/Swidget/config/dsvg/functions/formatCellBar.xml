@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-formatCellBar" version="1.0.0000.001">
+
+    <name>formatCellBar</name>
+    <description>Generate a cell bar</description>
+    <content src="content/dsvg/functions/formatCellBar.js" type="text/javascript"/>
+    <content src="resources/css/dsvg/Swidget.css" type="text/css"/>
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">STRING</returnType>
+    <params>
+        <param name="value" required="true">
+            <type isRepeating="false">FLOAT</type>
+        </param>
+        <param name="maxValue" required="true">
+            <type isRepeating="false">FLOAT</type>
+        </param>
+        <param name="barBgClass" required="false">
+            <type isRepeating="false">STRING</type>
+        </param>
+    </params>
+</function>

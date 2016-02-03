@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-gatherTimeLineValues" version="1.0.0000.001">
+
+    <name>gatherTimeLineValues</name>
+    <description>gather date for tl wdiget</description>
+    <content src="content/dsvg/functions/gatherTimeLineValues.js" type="text/javascript"/>
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">STRING</returnType>
+    <params>
+        <param name="event name" required="true">
+            <type isRepeating="true">STRING</type>
+        </param>
+        <param name="event date" required="true">
+            <type isRepeating="true">DATETIME</type>
+        </param>
+    </params>
+</function>

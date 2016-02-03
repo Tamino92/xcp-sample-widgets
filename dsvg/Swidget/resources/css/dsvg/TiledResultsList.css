@@ -1,0 +1,99 @@
+.container {
+  display: block;
+  width: 100%;
+  float: left;
+}
+
+.block-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.block-list li {
+  display: block;
+  width: 100%;
+  float: left;
+}
+
+@media screen and (min-width: 400px) and (max-width: 699px) {
+  .example-01 .block-list li {
+    width: 100%;
+    float: left;
+    width: 49%;
+    margin-right: 2%;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .example-01 .block-list li {
+    width: 100%;
+    float: left;
+    width: 32.333333333333336%;
+    margin-right: 1.5%;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1299px) {
+  .example-01 .block-list li {
+    width: 100%;
+    float: left;
+    width: 24.25%;
+    margin-right: 1%;
+  }
+
+}
+@media screen and (min-width: 1300px) and (max-width: 1699px) {
+  .example-01 .block-list li {
+    width: 100%;
+    float: left;
+    width: 19.36%;
+    margin-right: 0.8%;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .example-01 .block-list li {
+    width: 100%;
+    float: left;
+    width: 16.166666666666668%;
+    margin-right: 0.6%;
+  }
+}
+
+.block-list {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0.6rem;
+  background: #FFFFFF;
+}
+.block-list li {
+  line-height : 90%;
+  display: block;
+  width: 100%;
+  float: left;
+  margin-bottom: 0.6rem;
+  background: #efefef;
+  padding: 0.6rem 1rem;
+}
+
+h4 {
+  margin : 0px 0px 0px 0px ;
+  text-align : right ;
+}
+.card {
+}
+.card-back,.card-front {
+    height : 110px ;
+
+}
+
+.card-back {
+    display : none ;
+	}
+
+.card:hover .card-front {
+    display : none ;
+	}
+
+.card:hover .card-back {
+    display : block ;
+	}
+

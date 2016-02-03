@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<function xmlns="http://documentum.emc.com/2010/UI-Model"
+          id="JSFunction-addFA" version="1.0.0000.001">
+
+    <name>addFA</name>
+    <description>Add a i element with input class</description>
+    <content src="content/dsvg/functions/xcpFontAwesome.js" type="text/javascript"/>
+    <!--<content src="resources/css/dsvg/font-awesome-4.5.0/css/font-awesome.min.css" type="text/css"/>-->
+    
+
+    <namespace>dsvg.functions</namespace>
+    <categoryName>String</categoryName>
+
+    <returnType isRepeating="false">STRING</returnType>
+    <params>
+        <param name="faClasses" required="true">
+            <type isRepeating="false">STRING</type>
+        </param>
+        <param name="color" required="false">
+            <type isRepeating="false">STRING</type>
+        </param>
+    </params>
+</function>

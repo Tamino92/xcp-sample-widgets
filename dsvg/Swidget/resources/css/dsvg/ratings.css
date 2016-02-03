@@ -1,0 +1,65 @@
+.ratings {
+  width: 85px;
+  height: 17px;
+  display: inline-block;
+  position: relative;
+}
+.ratings:before, .ratings:after {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ratings:before {
+  /*color: #F9C8D3;*/
+  content: "\f006\f006\f006\f006\f006";
+}
+.ratings:after {
+  /*color: #EF005B;*/
+  content: "\f005\f005\f005\f005\f005";
+  overflow: hidden;
+}
+
+.ratings.none:after {
+  content: "";
+}
+
+.ratings.half:after {
+  content: "\f089";
+}
+
+.ratings.one:after {
+  content: "\f005";
+}
+
+.ratings.onehalf:after {
+  content: "\f005\f089";
+}
+
+.ratings.two:after {
+  content: "\f005\f005";
+}
+
+.ratings.twohalf:after {
+  content: "\f005\f005\f089";
+}
+
+.ratings.three:after {
+  content: "\f005\f005\f005";
+}
+
+.ratings.threehalf:after {
+  content: "\f005\f005\f005\f089";
+}
+
+.ratings.four:after {
+  content: "\f005\f005\f005\f005";
+}
+
+.ratings.fourhalf:after {
+  content: "\f005\f005\f005\f005\f089";
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://documentum.emc.com/2010/UI-Model" id="gooey_menu" xtype="gooey_menu" version="1.0.0000.001">
+
+    <name>Gooey Menu</name>
+    <description>Gooey Menu</description>
+    <author email="dominique.gallet@emc.com">Dominique Gallet</author>
+
+
+    <icon src="icons/gooey_menu_16_wig.png" width="16" height="16"/> <!-- palette -->
+    <icon src="icons/gooey_menu_24_wig.png" width="24" height="24"/> <!-- drag-and-drop -->
+
+
+    <content src="content/dsvg/widgets/GooeyMenu.js" type="text/javascript"/>
+    <content src="content/dsvg/widgets/designer/GooeyMenu.js" type="text/javascript" mode="design"/>
+    <content src="content/dsvg/lib/d3.min.js" type="text/javascript"/>
+    <content src="resources/css/dsvg/GooeyMenu.css" type="text/css"/>
+
+    <category>xcpPalette:Custom</category>
+
+    <configuration>
+        <propertyInfo name="hidden">
+            <label>Hidden when</label>
+            <type>EXPRESSION</type>
+            <expression>
+                <setterFunName>setHidden</setterFunName>
+                <contextTree>
+                    <include>PRIMARY_CONTEXT</include>
+                    <include>APP_CONTEXT</include>
+                    <include>WIDGET_CONTEXT</include>
+                    <include>SINGLE_OBJECT_DATA_SERVICE_OUTPUT</include>
+                    <include>UI_EVENTS</include>
+                    <include>SESSION_PARAMETERS</include>
+                    <include>FRAGMENT_INPUT</include>
+                </contextTree>
+                <enableExplicitEventSubscription>true</enableExplicitEventSubscription>
+            </expression>
+        </propertyInfo>
+        <propertyInfo name="title">
+            <label>Title</label>
+            <type>STRING</type>
+        </propertyInfo>
+        <propertyInfo name="debug">
+            <label>Debug</label>
+            <type>BOOLEAN</type>
+            <defaultvalue>true</defaultvalue>
+        </propertyInfo>
+        <propertyInfo name="menuLabels">
+            <label>Menu labels</label>
+            <type>STRING</type>
+        </propertyInfo>
+        <propertyInfo name="menuTargets">
+            <label>Menu Events message</label>
+            <type>STRING</type>
+        </propertyInfo>
+        <propertyInfo name="menuButtonIds">
+            <label>Menu linked buttons</label>
+            <type>STRING</type>
+        </propertyInfo>
+    </configuration>
+
+    <expressionProperties>
+        <propertyInfo name="gooclicked">
+            <label>Last Clicked Node</label>
+            <type>STRING</type>
+            <getterFun>
+                <name>dsvg.widgets.GooeyMenu.getMenuItemClicked</name>
+                <arguments>
+                    <argument>EVALUATION_CONTEXT</argument>
+                    <argument>WIDGET_ID</argument>
+                </arguments>
+            </getterFun>
+            <changeEvents>
+                <eventInfo name="gooclicked"/>
+            </changeEvents>
+        </propertyInfo>
+    </expressionProperties>
+
+    <events>
+        <eventInfo name="gooclicked"/>
+        <eventInfo name="show"/>
+        <eventInfo name="hide"/>
+        <eventInfo name="focus"/>
+    </events>
+
+
+
+</widget>
